@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded",function(){
                 url: "/token",
                 data: $(this).serialize(),
                 success:function(data){
-                    $(".panel-heading").append(data);
+                    $(".text-center").append(data);
                 }
             })
 

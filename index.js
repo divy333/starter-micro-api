@@ -65,7 +65,7 @@ http.createServer(function (req, res) {
         //res.answer = 'Hello';
         //res.write
         //var answer = "Hello There!";
-        var token = Math.floor(Math.random() +1)*100000019);
+        var token = Math.floor(Math.random() +1)*100000019;
         res.write(token.toString());
         return res.end();
     }

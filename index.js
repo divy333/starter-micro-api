@@ -6,18 +6,43 @@ var url = require('url');
 
 http.createServer(function (req, res) {
     console.log(`Just got a request at ${req.url}!`)
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    
     //res.write('Hi there, Yash!');
     //res.write("Date-Time is: " + dt.myDateTime());
     //res.writeHead(200, {'Content-Type': 'text/html'});
     if(req.url ==='/'){
         fs.readFile('./index.html','utf8',function(err,data){
+            res.writeHead(200, {'Content-Type': 'text/html'});
             console.log("reading data");
         
             res.write(data);
         //data1 = data;
             //console.log(data);
             console.log(req);
+            console.log("error: " + err);
+            return res.end();
+        });
+    }
+        if(req.url ==='/worker.js'){
+        fs.readFile('./worker.js','utf8',function(err,data){
+            //console.log("reading data");
+        res.writeHead(200, {'Content-Type': 'text/js'});
+            res.write(data);
+        //data1 = data;
+            //console.log(data);
+            //console.log(req);
+            console.log("error: " + err);
+            return res.end();
+        });
+    }
+            if(req.url ==='/style.css'){
+        fs.readFile('./style.css','utf8',function(err,data){
+            //console.log("reading data");
+        res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(data);
+        //data1 = data;
+            //console.log(data);
+            //console.log(req);
             console.log("error: " + err);
             return res.end();
         });

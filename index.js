@@ -25,6 +25,7 @@ http.createServer(function (req, res) {
     else if (req.url === '/ask')
     {
         console.log("Inside ask");
+        console.log(req);
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write

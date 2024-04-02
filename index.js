@@ -51,15 +51,16 @@ http.createServer(function (req, res) {
     }
     else if (req.url === '/ask')
     {
+        //Response.Write(test)
         console.log("Inside ask");
-        console.log(JSON.parse(req));
+        //console.log(JSON.parse(req));
         console.log("ask part 2");
-        console.log(qs.parse(req));
+        //console.log(qs.parse(req));
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write
         var answer = "Hello There!";
-        res.write(JSON.stringify(v8.deserialize(req.data)));
+        res.write(JSON.stringify(answer));
         return res.end();
     }
     else if (req.url === '/token')

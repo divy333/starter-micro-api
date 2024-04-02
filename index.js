@@ -3,6 +3,7 @@ var dt   = require('./DateModule.js');
 var fs = require('fs');
 var url = require('url');
 const v8 = require('v8');
+const qs = require('querystring');
 //var data1;
 
 http.createServer(function (req, res) {
@@ -51,7 +52,9 @@ http.createServer(function (req, res) {
     else if (req.url === '/ask')
     {
         console.log("Inside ask");
-        console.log(req.messageText);
+        console.log(JSON.parse(req));
+        console.log("ask part 2");
+        console.log(qs.parse(req));
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write

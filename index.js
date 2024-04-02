@@ -2,6 +2,7 @@ var http = require('http');
 var dt   = require('./DateModule.js');
 var fs = require('fs');
 var url = require('url');
+const v8 = require('v8');
 //var data1;
 
 http.createServer(function (req, res) {
@@ -50,12 +51,12 @@ http.createServer(function (req, res) {
     else if (req.url === '/ask')
     {
         console.log("Inside ask");
-        console.log(JSON.stringify(req));
+        console.log(v8.deserialize(req.data));
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write
         var answer = "Hello There!";
-        res.write(JSON.stringify(req));
+        res.write(JSON.stringify(v8.deserialize(req.data)));
         return res.end();
     }
     else if (req.url === '/token')

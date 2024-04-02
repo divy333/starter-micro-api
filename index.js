@@ -59,7 +59,7 @@ http.createServer(function (req, res) {
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write
-        var answer =""
+        var answer =req.body.answer;
         res.write(JSON.stringify(answer));
         return res.end();
     }

@@ -49,12 +49,12 @@
                 e.preventDefault();
                 var message = $('#messageText').val();
                 $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "text-align:right; color : #2EFE2E" class="media-body">' + message + '<hr/></div></div></div></li>');
-
+                var answer = $('#messageText').val();
                 $.ajax({
                     type: "POST",
                     url: "/ask",
                     contentType: "json",
-                    data: $(this).serialize(),
+                    data: { answer: answer },
                     success: function(response) {
                         $('#messageText').val('');
                         var answer = response;

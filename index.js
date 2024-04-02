@@ -55,7 +55,7 @@ http.createServer(function (req, res) {
         //res.answer = 'Hello';
         //res.write
         var answer = "Hello There!";
-        res.write(JSON.stringify({answer}));
+        res.write(req);
         return res.end();
     }
     else if (req.url === '/token')

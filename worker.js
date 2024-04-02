@@ -53,6 +53,7 @@
                 $.ajax({
                     type: "POST",
                     url: "/ask",
+                    contentType: "json",
                     data: $(this).serialize(),
                     success: function(response) {
                         $('#messageText').val('');

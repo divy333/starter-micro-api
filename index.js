@@ -50,12 +50,12 @@ http.createServer(function (req, res) {
     else if (req.url === '/ask')
     {
         console.log("Inside ask");
-        console.log(req);
+        console.log(JSON.stringify(req));
         //res.write("Hello");
         //res.answer = 'Hello';
         //res.write
         var answer = "Hello There!";
-        res.write(req);
+        res.write(JSON.stringify(req));
         return res.end();
     }
     else if (req.url === '/token')
